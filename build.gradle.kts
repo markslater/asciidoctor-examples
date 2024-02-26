@@ -17,11 +17,11 @@ repositories {
 }
 
 dependencies {
-    asciidoctorGems(group = "rubygems", name="asciidoctor-tabs", version="1.0.0.beta.6")
+    asciidoctorGems("rubygems:asciidoctor-revealjs:1.1.3")
 }
 
 asciidoctorj {
-    requires("asciidoctor-tabs")
+    requires("asciidoctor-revealjs")
 }
 
 tasks {

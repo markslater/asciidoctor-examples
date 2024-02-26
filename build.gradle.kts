@@ -23,3 +23,9 @@ dependencies {
 asciidoctorj {
     requires("asciidoctor-tabs")
 }
+
+tasks {
+    asciidoctor {
+        dependsOn("asciidoctorGemsPrepare")
+    }
+}

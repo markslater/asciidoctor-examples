@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    asciidoctorGems("rubygems:asciidoctor-revealjs:1.1.3")
+    asciidoctorGems("rubygems:asciidoctor-revealjs:5.1.0")
 }
 
 asciidoctorj {

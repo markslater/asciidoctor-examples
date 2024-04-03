@@ -21,7 +21,9 @@ dependencies {
 }
 
 asciidoctorj {
-    requires("asciidoctor-revealjs")
+    requires(
+        project.layout.buildDirectory.file(".asciidoctorGems/gems/asciidoctor-revealjs-5.1.0/lib/asciidoctor-revealjs.rb")
+    )
 }
 
 tasks {

@@ -5,29 +5,24 @@ buildscript {
 }
 
 plugins {
+    java
+    `jvm-test-suite`
     id("org.asciidoctor.jvm.convert") version "4.0.2"
-    id("org.asciidoctor.jvm.gems") version "4.0.2"
 }
 
 repositories {
     mavenCentral()
-    ruby {
-        gems()
-    }
 }
 
-dependencies {
-    asciidoctorGems("rubygems:asciidoctor-revealjs:5.1.0")
-}
-
-asciidoctorj {
-    requires(
-        project.layout.buildDirectory.file(".asciidoctorGems/gems/asciidoctor-revealjs-5.1.0/lib/asciidoctor-revealjs.rb")
-    )
-}
-
-tasks {
-    asciidoctor {
-        dependsOn("asciidoctorGemsPrepare")
+testing {
+    @Suppress("UnstableApiUsage")
+    suites {
+        val test by getting(JvmTestSuite::class) {
+            useJUnitJupiter()
+            dependencies {
+                implementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+                runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+            }
+        }
     }
 }

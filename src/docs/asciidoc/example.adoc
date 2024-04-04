@@ -1,7 +1,10 @@
 = Example
 
-[tabs]
-====
-Foo::
-Bar::
-====
+[source,java]
+----
+include::{docfile}/../../../test/java/example/ExamplesTest.java[tags=exampleCode,indent=0]
+----
+
+The `example` variable contains ``{empty}
+include::{docfile}/../../../test/java/example/ExamplesTest.java[tags=exampleResult]
+``.

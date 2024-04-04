@@ -3,5 +3,7 @@
 [tabs]
 ====
 Foo::
+Some foo content
 Bar::
+Some bar content
 ====

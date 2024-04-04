@@ -17,17 +17,17 @@ repositories {
 }
 
 dependencies {
-    asciidoctorGems("rubygems:asciidoctor-revealjs:5.1.0")
-}
-
-asciidoctorj {
-    requires(
-        project.layout.buildDirectory.file(".asciidoctorGems/gems/asciidoctor-revealjs-5.1.0/lib/asciidoctor-revealjs.rb")
-    )
+    asciidoctorGems(group = "rubygems", name="asciidoctor-tabs", version="1.0.0.beta.6")
 }
 
 tasks {
     asciidoctor {
         dependsOn("asciidoctorGemsPrepare")
+        asciidoctorj {
+            requires(
+                "asciidoctor",
+                project.layout.buildDirectory.file(".asciidoctorGems/gems/asciidoctor-tabs-1.0.0.beta.6/lib/asciidoctor-tabs.rb")
+            )
+        }
     }
 }
